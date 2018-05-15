@@ -1,14 +1,13 @@
 
-
-.App-logo {
-  height: 45px;
-}
-
-.App-header {
+.Header {
   background-color: #222;
   height: 35px;
   padding: 20px;
   
+}
+
+.App-logo {
+  height: 45px;
 }
 
 .Filter {
