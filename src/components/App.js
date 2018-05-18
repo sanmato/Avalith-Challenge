@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import avalith from './avalith.png';
 
-import Header from './Header'
-import Content from './Content'
-import Footer from './Footer'
+//componentes
+import Header from './Header';
+import Content from './Content';
+import { Grid, Row, Col, Navbar } from 'react-bootstrap';
+import Sidebar from './Sidebar';
 
 class App extends Component {
   render() {
     return (
+      
       <div className="App">
         <Header />
-        <Content />
-        <Footer />
-      </div>
-
-      
+        <Sidebar />
+        <Content />        
+      </div> 
     );
   }
 }
