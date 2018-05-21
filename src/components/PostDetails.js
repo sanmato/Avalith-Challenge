@@ -1,33 +1,31 @@
 import React, { Component } from 'react';
+import './css/PostDetails.css';
+// import Card from './Card';
 import PropTypes from 'prop-types';
-import './css/Card.css';
 
 
-class Card extends Component {
+class PostDetails extends Component {
   constructor(){
     super();
 
 
-    this.handleShowCard = this.handleShowCard.bind(this);
   }
   static propTypes ={
-      id: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired, 
       title: PropTypes.string.isRequired,
       details: PropTypes.string.isRequired,
       technology: PropTypes.array.isRequired, 
       imageUrl: PropTypes.string
   };
 
-  handleShowCard(e){
-    this.props.onClick(e);
-  }
 
   render() {
-    const { id, title, details, technology, imageUrl } = this.props;
+    const { id, title, details, technology, imageUrl} = this.props;
+
     return (
-      <div className="card">
+      <div className="PostDetails">
         <img id={id} src={imageUrl} alt={title} onClick={this.handleShowCard} />
-        <div className="text">
+        <div className="Title">
           <p>{`${details}`}</p>
         </div>
       </div> 
@@ -35,4 +33,4 @@ class Card extends Component {
   }
 }
 
-export default Card;
+export default PostDetails;
