@@ -17,13 +17,26 @@ class CardsContainer extends Component {
   }
   render() {
     const {cards} = this.props;
-    
+    // var myCards = new Map(cards);
+    // var filterCards = new Array;
     return (
-      <div className="CardsContainer">
+      <div className={`CardsContainer ${ true ? 'active' : '' }`}>
         <header className="Title">LANGUAGES & TECHNOLOGIES</header>
-        
+        {/* {filterCards = myCards.filter( (item, key) => 
+          item.cardTechnology == "Frontend").map( (item, key) => (
+          <Card 
+            key= {key}
+            title= {item.cardTitle} 
+            details={item.cardDescription}
+            technology={item.cardTechnology}
+            imageUrl={item.cardImageUrl}/>
+            // }
+          )
+          )        
+        } */}
 
           {cards && cards.map( (item, key) => (
+            // if (item.cardTechnology !== 'Frontend'){
           <Card 
             key= {key}
             id= {item.cardId}
@@ -31,7 +44,8 @@ class CardsContainer extends Component {
             details={item.cardDescription}
             technology={item.cardTechnology}
             imageUrl={item.cardImageUrl}
-            onClick={this.ShowCard}/>
+            onCardClick={this.ShowCard}/>
+            // }
           )
         )}
       </div>

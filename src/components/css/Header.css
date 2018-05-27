@@ -1,4 +1,3 @@
-
 .Header {
   width: 100%;
   height: 60px;
@@ -6,7 +5,7 @@
   position: fixed;
 }
 
-.App-logo {
+.Header img {
   width: 35px;
   height: 39px;
   margin-top: 10px;

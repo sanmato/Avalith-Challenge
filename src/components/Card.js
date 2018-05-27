@@ -11,7 +11,7 @@ class Card extends Component {
     this.handleShowCard = this.handleShowCard.bind(this);
   }
   static propTypes ={
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       details: PropTypes.string.isRequired,
       technology: PropTypes.array.isRequired, 
@@ -19,7 +19,7 @@ class Card extends Component {
   };
 
   handleShowCard(e){
-    this.props.onClick(e);
+    this.props.onCardClick(e);
   }
 
   render() {
