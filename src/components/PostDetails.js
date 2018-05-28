@@ -3,14 +3,19 @@ import './css/PostDetails.css';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import {Doughnut} from 'react-chartjs-2';
+//import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col } from 'react-grid-system';
+
 
 const data = {
 	labels: [
 		'Pink',
 		'Blue',
 		'Yellow'
-	],
+  ],
+
 	datasets: [{
+    //Data values are static for now!
 		data: [300, 50, 100],
 		backgroundColor: [
 		'#FF6384',
@@ -29,7 +34,6 @@ class PostDetails extends Component {
   constructor(){
     super();
 
-
     this.handleClickDetails = this.handleClickDetails.bind(this);
   }
   static propTypes ={
@@ -39,6 +43,8 @@ class PostDetails extends Component {
       technology: PropTypes.array.isRequired, 
       imageUrl: PropTypes.string
   };
+
+ 
 
   handleClickDetails(e) {
     this.props.onClick(e);
@@ -53,20 +59,32 @@ class PostDetails extends Component {
 
         <Button
         className="Button"
-        id="goback"
-        variant="raised"      
+        id="goback"     
         onClick= {this.handleClickDetails}
         >
         Go back
         </Button>
+          
+           <img id="imagePost" src={imageUrl} alt={title}/>
+            
+           <Container>
+          <Row>
+            <Col sm={6}>
+              <div className="Title">
+                <p>{`${details}`}</p>
+              </div>
+            </Col>
 
-        <img id="imagePost" src={imageUrl} alt={title}/>
-        <div className="Title">
-          <p>{`${details}`}</p>
-        </div>
-        <h2>Javascript Development</h2>
-        <Doughnut  data={data} />
+            <Col sm={6}>
+              <div className="graph">
+                <p className="detail">{`${title}`} Development</p>
+                <Doughnut  data={data} />
+              </div>
+            </Col>
 
+          </Row>
+
+        </Container>
       </div>
       
     );

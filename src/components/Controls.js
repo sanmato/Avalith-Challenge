@@ -16,17 +16,13 @@ class Controls extends Component {
   render() {
     return (
       <div className="controls">
-         {/* <div className="editSearch">
-          <input id="txtSearch" placeholder='Search in cards'
-          onChange={this.handleChangeInput}></input>
-        </div> */}
-        {/* <div className="editSearch"> */}
+         
           <TextField 
             className="editSearch"
             label ="Search in Cards" 
             placeholder="Search in Cards"
             onChange={this.handleChangeInput}/>
-        {/* </div> */}
+        
         <div className="radio">
           <p>Filter by:</p>
           <form>
@@ -44,7 +40,6 @@ class Controls extends Component {
           </form>
         </div>
         </div>
-      //</div> 
     );
   }
 }

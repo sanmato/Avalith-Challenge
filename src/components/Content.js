@@ -6,8 +6,6 @@ import CardsContainer from './CardsContainer';
 import PostDetails from './PostDetails';
 import Card from './Card';
 
-//logoHideBar
-
 class Content extends Component {
   static propTypes = {
     filtro: PropTypes.string,
