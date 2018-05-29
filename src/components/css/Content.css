@@ -3,16 +3,19 @@ Body{
 }
 
 .Content {
-  padding: 10px;
+  
+  /* margin-left: 300px; */
   float: initial;
-  padding-top: 75px;
+  /* padding-left: 30px; */
+  /* padding-top: 75px; */
   height: 100%;
+  /* background-color: whitesmoke; */
 }
 .Content.active{
   margin-left: 300px;
-  width: calc(100% - 320px)
+  width: calc(100% - 300px)
 }
 .Content.inactive{
   margin-left: 0px;
-  width: calc(100% - 20px);
+  width: 100%;
 }

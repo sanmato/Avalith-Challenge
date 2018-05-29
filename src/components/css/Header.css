@@ -3,6 +3,7 @@
   height: 60px;
   background-color: black;
   position: fixed;
+  z-index: 1;
 }
 
 .Header img {

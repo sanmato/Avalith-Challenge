@@ -3,7 +3,6 @@ import './css/PostDetails.css';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import {Doughnut} from 'react-chartjs-2';
-//import { Container, Row, Col } from 'reactstrap';
 import { Container, Row, Col } from 'react-grid-system';
 
 
@@ -15,8 +14,7 @@ const data = {
   ],
 
 	datasets: [{
-    //Data values are static for now!
-		data: [300, 50, 100],
+		data: [],
 		backgroundColor: [
 		'#FF6384',
 		'#36A2EB',
@@ -37,12 +35,13 @@ class PostDetails extends Component {
     this.handleClickDetails = this.handleClickDetails.bind(this);
   }
   static propTypes ={
-      id: PropTypes.number.isRequired, 
-      title: PropTypes.string.isRequired,
-      details: PropTypes.string.isRequired,
-      technology: PropTypes.array.isRequired, 
-      imageUrl: PropTypes.string
-  };
+    id: PropTypes.number.isRequired, 
+    title: PropTypes.string.isRequired,
+    postDescription: PropTypes.string.isRequired,
+    postTitle: PropTypes.string.isRequired, 
+    imageUrl: PropTypes.string,
+    cardGraph: PropTypes.array
+};
 
  
 
@@ -51,27 +50,30 @@ class PostDetails extends Component {
   }
 
   render() {
-    const { id, title, details, technology, imageUrl} = this.props;
+    const { id, title, postDescription, postTitle, imageUrl, cardGraph} = this.props;
+    {data.datasets[0].data = cardGraph}
 
     
     return (
       <div className="PostDetails">
-
+        {this.setDataChart}
+        <div id="header" style={{backgroundImage: `url(${imageUrl})` }}>
         <Button
         className="Button"
-        id="goback"     
+        id="goback"
+        variant="raised"
+        color="primary"
         onClick= {this.handleClickDetails}
         >
-        Go back
+        Go Back
         </Button>
-          
-           <img id="imagePost" src={imageUrl} alt={title}/>
+        </div>
             
            <Container>
           <Row>
             <Col sm={6}>
               <div className="Title">
-                <p>{`${details}`}</p>
+                <p>{`${postDescription}`}</p>
               </div>
             </Col>
 
